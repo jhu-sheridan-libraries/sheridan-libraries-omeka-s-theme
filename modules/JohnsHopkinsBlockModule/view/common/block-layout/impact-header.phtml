@@ -1,0 +1,26 @@
+<?php
+/**
+ * @var \Omeka\Api\Representation\AssetRepresentation $image
+ * // @var String $link
+ * @var String $heading
+ * @var String $heading_size
+ * @var String $description
+ */
+
+ $imageUrl = null;
+ $imageAlt = null;
+ if($image){
+    $imageUrl = $image->assetUrl();
+    $imageAlt = $image->altText();
+ }
+
+echo <<<HTML
+<div class="jh-impact-header" style="background-image:url('$imageUrl');">
+    <div class="impact-header-content site-width">
+        <$heading_size>$heading</$heading_size>
+        <div class="jh-impact-header-description">$description</div>
+    </div>
+</div>
+
+HTML;
+

@@ -1,0 +1,73 @@
+body.item-set,
+body.browse {
+    .page-input-top {
+        width: 3rem;
+        text-align: center;
+    }
+
+    .browse-controls {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        
+    }
+
+    .pagination {
+        form {
+            display: inline-block;
+            margin-right: .5rem;
+        }
+    }
+
+    ul.resource-list {
+        @include list-clear;
+        margin-bottom: 2rem;
+        max-width: 100% !important;
+
+        .resource {
+            border-bottom: 1px solid $gray-light;
+            padding: 1.5rem 0;
+            overflow: hidden;
+            position: relative;
+
+            .resource-name {
+                font-size: 1.25rem;
+                font-weight: 500;                
+            }
+
+            .description {
+                margin-top: .25rem;
+            }
+
+            img {
+                float: right;
+                margin-left: 1rem;
+                width: 60px;
+                height:  auto;
+
+                @media (min-width: $bp-m) {
+                    width: 100px;
+                }
+            }
+
+            &:first-child {
+                border-top: 1px solid $gray-light;
+            }
+        }
+    }
+
+    @media (min-width: $bp-l) {
+        .metadata {
+            width: 30%;
+            float: left;
+
+            &~* {
+                float: right;
+                overflow: hidden;
+                margin-left: 1rem;
+                width: calc(70% - 1rem);
+            }
+        }
+    }
+}

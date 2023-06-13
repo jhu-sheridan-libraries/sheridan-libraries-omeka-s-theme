@@ -1,0 +1,9 @@
+body.resource.show {
+    .media-embeds {
+        @media (min-width: $bp-m) {
+            max-width: 50%;
+            float: right;
+            margin-left: 1rem;
+        }
+    }
+}

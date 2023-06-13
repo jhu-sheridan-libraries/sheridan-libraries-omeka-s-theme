@@ -1,0 +1,26 @@
+#content {
+    //overflow: hidden;
+    background-color: $white;
+    padding: 1.5rem 0;
+
+    .content-stage {
+        .sub-menu {
+            display: none;
+        }
+    }
+
+    p, ul, ol, blockquote, h1, h2, h3, h4, h5, h6, dl, form {
+        max-width: 768px;
+
+        &.extended-width {
+            max-width: none;
+        }
+    }
+    
+    &:after {
+        content: '';
+        display: block;
+        overflow: hidden;
+        clear: both;
+    }
+}

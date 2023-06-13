@@ -1,0 +1,105 @@
+//Foundation Form Styles
+form {
+  margin-bottom: 1rem;
+}
+
+label, .label {
+  display: inline-block;
+  //margin-bottom: .2rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+input[type='text'],
+input[type='password'],
+textarea,
+select {
+  font-size: 1rem;
+  border-radius: .25rem;
+  border: 1px solid $gray-light;
+  box-sizing: border-box;
+  padding: .5rem;
+  width: auto;
+  transition: .3s;
+
+  &:focus {
+    @include focus;
+  }
+}
+
+textarea {
+  min-height: 10rem;
+}
+
+input[type='submit'] {
+  @include button();
+  -webkit-appearance: none;
+}
+
+input [type='checkbox'], input [type='radio'] {
+  padding: 0;
+  margin: .25rem;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+
+  legend {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: .25rem;
+  } 
+}
+
+.field {
+  margin-bottom: 1.5rem;
+}
+
+#advanced-search {
+  max-width: none !important;
+
+  .field {
+
+    .field-meta {
+      box-sizing: border-box;
+      position: relative;
+      width: 100%;
+      padding-right: 50px;
+
+      .add-value {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+
+    @media (min-width: $bp-m) {
+      display: flex;
+
+      .field-meta {
+        box-sizing: border-box;
+        width: 30%;
+        align-self: flex-start;
+      }
+
+      .inputs {
+        box-sizing: border-box;
+        width: 70%;
+        padding-left: 1.5rem;
+      }
+    }
+  }
+
+  .remove-value, .add-value {
+    padding-left: 0;
+    padding-right: 0;
+    width: 2.75rem;
+    flex-shrink: 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

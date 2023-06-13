@@ -1,0 +1,365 @@
+#header {
+    background: $white;
+    background: linear-gradient(114deg, rgba($white,0.9023984593837535) 0%, rgba($white,0.7455357142857143) 60%, rgba($white,0.19931722689075626) 100%);    
+    position: relative;
+    z-index: 9999;
+    
+    .header-stage {
+
+    }
+
+    .brand-row {
+        padding: 1rem 0;
+        border-bottom: .35rem solid var(--color-primary);
+
+        @media (min-width: $bp-l) {
+            border-bottom: 0;
+        }
+
+        .brand-stage {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .site-brand {
+            display: flex;
+            align-items: center;
+
+            .logo {
+                flex-grow: 0;
+                flex-shrink: 0;
+                display: block;
+                height: 3rem;
+                width: 3rem;
+                margin-right: .5rem;
+                background-image: url('../images/university.shield.blue.png');
+                background-repeat: no-repeat;
+                background-size: auto 100%;
+                background-position: center;
+
+                &.logo-hopkins_medicine {
+                    background-image: url('../images/medicine.shield.blue.png');
+                }
+
+                @media (min-width: $bp-l) {
+                    width: 20rem;
+                    height: 6rem;
+                    margin-right: 0;
+                    background-image: url('../images/university.logo.horizontal.blue.png');
+                    
+                    &.logo-hopkins_medicine {
+                        background-image: url('../images/medicine.logo.horizontal.blue.png');
+                    }
+
+                    &.logo-libraries {
+                        background-image: url('../images/sheridan-libraries.logo.horizontal.blue.png');
+                    }
+
+                    &.logo-museums {
+                        background-image: url('../images/sheridan-museums.logo.horizontal.blue.png');
+                    }
+
+                    &.logo-jhu {
+                        background-image: url('../images/university.logo.horizontal.blue.png');
+                    }
+                }
+            }
+
+            .brand-text {
+                display: flex;
+                flex-direction: column;
+                border-left: 1px solid $gray-light;
+                padding-left: .5rem;
+
+                @media (min-width: $bp-l) {
+                    padding-left: 1rem;
+                }
+            }
+
+            .site-title {
+                font-family: var(--font-primary);
+                font-weight: 700;
+                color: var(--color-primary);
+                font-size: 1.25rem;
+                line-height: 1.125;
+
+                @media (min-width: $bp-l) {
+                    font-size: 1.75rem;
+                }
+            }
+
+            .site-tagline {
+                font-family: var(--font-primary);
+                font-weight: 500;
+                //color: var(--color-secondary);
+                color: $gray;
+                font-size: .875rem;
+                line-height: $lh-tight;
+                margin-top: .25rem;
+
+                @media (min-width: $bp-l) {
+                    font-size: 1.125rem;
+                    margin-top: .25rem;
+                }
+            }
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        .zn-drawer-toggle {
+            flex-shrink: 0;
+            position: relative;
+            padding: 1.75rem 0 0;
+            font-size: .75rem;
+            display: block;
+            height: 3rem;
+            width: 3rem;
+            text-align: center;
+            font-family: $f-sans;
+            text-transform: uppercase;
+            font-weight: 500;
+            margin: 0 0 0 .5rem;
+
+            &:before {
+                content: "\f0c9";
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                position: absolute;
+                top: 0.125rem;
+                left: 0;
+                width: 100%;
+                text-align: center;
+                font-size: 1.5rem;
+            }
+
+            @media all and (min-width: $bp-l) {
+                display: none;
+            }
+        }
+    }
+
+    .nav-row {
+        background-color: var(--color-primary);
+        color: $white;
+
+        ul {
+            @include list-clear;
+        }
+
+        a, button, input {
+            &:focus {
+                @include focus-color($color: rgba($white, .5));
+            }
+        }
+
+        a {
+            color: $white;
+        }
+
+        .drawer-stage {
+            .zn-close-drawer {
+                display: none;
+            }
+
+            @media (max-width: ($bp-l - 1)) {
+                position: relative;
+                padding: 1rem 3rem 1rem 1rem;
+                font-size: 1rem;
+                font-weight: 500;
+
+                .zn-close-drawer {
+                    display: block;
+                    position: absolute;
+                    top: .5rem;
+                    right: .5rem;
+                    height: 2rem;
+                    width: 2rem;
+                    padding: 0;
+                    background-color: transparent;
+
+                    &:focus {
+                        @include focus-color($color: rgba($white, .5));
+                    }
+
+                    &:before {
+                        content: '\f00d';
+                        font-family: "Font Awesome 5 Free";
+                        font-weight: 900;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        line-height: 2rem;
+                        text-align: center;
+                        font-size: 1.5rem;
+                    }
+                }
+
+                ul {
+                    font-size: 1.25rem;
+
+                    li {
+                        a {
+                            display: block;
+                            padding: .5rem 0;
+                        }
+
+                        + li {
+                            border-top: 1px solid rgba(255,255,255,.3);
+                        }
+
+                        ul {
+                            border-top: 1px solid rgba(255,255,255,.3);
+                            font-size: 1rem;
+
+                            a {
+                                padding-left: 1rem;
+                            }
+                        }
+                    }
+                }
+           
+            }
+        }
+
+        @media (min-width: $bp-l) {
+            a {
+                position: relative;
+                display: block;
+                padding: .75rem 1rem;
+
+                &:after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    pointer-events: none;
+                    background-color: $white;
+                    opacity: 0;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    transition: ease-in-out .3s;
+                }
+
+                &:hover {
+                    text-decoration: none;
+
+                    &:after {
+                        opacity: .2;
+                    }
+                }
+            }
+
+            ul.navigation {
+                display: flex;
+
+                > li {
+                    position: relative;
+
+                    > ul {
+                        background-color: var(--color-secondary);
+                        position: absolute;
+                        top: 100%;
+                        left: 0;
+                        width: 250px;
+                        opacity: 0;
+                        visibility: hidden;
+                        transition: all ease-in-out .3s;
+                    }
+
+                    &:hover {
+                        > ul {
+                            visibility: visible;
+                            opacity: 1;
+                        }
+                    }
+
+                    // &:last-child:not(:first-child) {
+
+                    //     > ul {
+                    //         left: auto;
+                    //         right: 0;
+                    //     }
+                    // }
+                }
+            }
+        }
+
+        @media (min-width: $bp-xl) {
+            font-size: 1.125rem;
+
+            a {
+                padding: 1rem 1.125rem;
+            }
+        }
+    }
+
+    .zn-drawer-opened &:after {
+        content: '';
+        background: rgba($black,.65);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transition: .7s;
+    }
+}
+
+#search {
+    min-width: 165px;
+
+    @media (min-width: $bp-l) {
+        margin-left: .5rem;
+
+        .drawer-stage & {
+            display: none;
+        }
+    }
+    
+    form {
+        display: flex;
+        
+        @media (min-width: $bp-l) {
+            margin: 0;
+        }
+
+        input {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            width: calc(100% - 2.25rem);
+        }
+
+        button {
+            position: relative;
+            margin: 0;
+            flex-shrink: 0;
+            width: 2.25rem;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            text-indent: -9999px;
+            overflow: hidden;
+
+            &:before {
+                content: '\f002';
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                color: $white;
+                position: absolute;
+                text-indent: 0;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                font-size: 1.25rem;
+                line-height: 2.25rem;
+            }
+        }
+    }
+}

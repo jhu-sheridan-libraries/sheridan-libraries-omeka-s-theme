@@ -1,0 +1,10 @@
+.site-page-pagination {
+    clear: both;
+    text-align: center;
+    border-top: 1px solid $gray-lighter;
+    padding-top: 1rem;
+
+    a {
+        @include button;
+    }
+}

@@ -1,0 +1,81 @@
+#footer {
+    padding: 2rem 0;
+    background-color: $gray-lighter;
+    
+    .footer-stage {
+        flex-direction: column;
+        display: flex;
+
+        @media (min-width: $bp-l) {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            .footer-credit {
+                max-width: 50%;
+                order: 2;
+                margin-bottom: 0;
+            }
+
+            .site-brand {
+                order: 1;
+            }
+        }
+    }
+
+    .footer-credit {
+        margin-bottom: 2rem;
+    }
+    
+    .site-brand {
+        display: flex;
+        align-items: center;
+
+        .logo {
+            display: block;
+            height: 3rem;
+            width: 3rem;
+            margin-right: .5rem;
+            background-image: url('../images/university.shield.blue.png');
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+            background-position: center;
+
+            &.logo-hopkins_medicine {
+                background-image: url('../images/medicine.shield.blue.png');
+            }
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            border-left: 1px solid $gray-light;
+            padding-left: .5rem;
+        }
+
+        .site-title {
+            font-family: var(--font-primary);
+            font-weight: 700;
+            color: var(--color-primary);
+            font-size: 1.25rem;
+            line-height: $lh-tight;
+        }
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    .terms {
+        margin-top: 1rem;
+
+        ul {
+            @include list-clear;
+            display: flex;
+
+            li {
+                margin-right: 1rem;
+            }
+        }
+    }
+}
