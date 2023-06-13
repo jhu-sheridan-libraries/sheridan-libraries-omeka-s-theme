@@ -1,0 +1,22 @@
+/*
+!.gitignore
+
+# custom theme folder
+!/themes/
+/themes/*
+!/themes/johns-hopkins-omeka-s/
+/themes/johns-hopkins-omeka-s/node_modules/
+
+# custom module folder
+!/modules/
+/modules/*
+!/modules/JohnsHopkinsBlockModule/
+
+# ckeditor file
+!/application/
+/application/*
+!/application/asset/
+/application/asset/*
+!/application/asset/js/
+/application/asset/js/*
+!/application/asset/js/custom-ckeditor-styles.js
