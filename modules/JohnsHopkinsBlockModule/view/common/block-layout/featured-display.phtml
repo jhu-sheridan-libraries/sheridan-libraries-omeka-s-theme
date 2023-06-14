@@ -1,0 +1,25 @@
+<?php
+/**
+ * @var \Omeka\Api\Representation\AssetRepresentation $image
+ * @var String $quote
+ * @var String $author
+ * @var String $subtext
+ */
+
+if($subtext){
+    $subtext = '<div class="quote-author-subtext">' . $subtext . '</div>';
+}
+
+echo <<<HTML
+<div class="zn-quote">
+    <div class="quote-text">
+        $quote
+    </div>
+    <div class="quote-author">
+        $author
+        $subtext
+    </div>
+</div>
+
+HTML;
+

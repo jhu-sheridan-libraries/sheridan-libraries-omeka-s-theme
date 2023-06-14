@@ -27,6 +27,10 @@ $siteColors = [
 <?php echo $this->doctype(); ?>
 <?php echo $this->htmlElement('html')->setAttribute('lang', $this->lang()); ?>
     <head>
+        <script type="text/javascript">
+            document.documentElement.className = 'js';
+        </script>
+        
         <?php echo $this->headMeta(); ?>
         <?php echo $this->headTitle(); ?>
         <?php echo $this->headLink(); ?>

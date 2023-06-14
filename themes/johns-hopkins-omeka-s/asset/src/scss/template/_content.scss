@@ -10,7 +10,7 @@
     }
 
     p, ul, ol, blockquote, h1, h2, h3, h4, h5, h6, dl, form {
-        max-width: 768px;
+        max-width: $w-content;
 
         &.extended-width {
             max-width: none;

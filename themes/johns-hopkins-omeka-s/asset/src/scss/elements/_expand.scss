@@ -1,0 +1,89 @@
+//Base styles - Applied without JS
+.zn-expand {
+    .zn-title {
+      font-size: 1.25rem;
+      margin: 0 0 .25rem;
+      font-weight: 400;
+    }
+  
+    .zn-content {
+      margin: 0 0 1.25rem;
+  
+      .js & {
+        display: none;
+      }
+    }
+  }
+  
+  //Expandable styles - Applied with JS
+  .zn-expand-group {
+    border-top: 1px solid $gray-light;
+    max-width: $w-content;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  
+    .zn-child-nav-layout & {
+      max-width: none;
+    }
+    
+    .zn-expand {
+      border-bottom: 1px solid $gray-light;
+  
+      .zn-title {
+        margin: 0;
+        font-weight: 400;
+  
+        //Interactive title button element
+        .zn-title-button {
+          position: relative;
+          padding: .875rem 2.25rem .875rem 1.25rem;
+          line-height: $lh-tight;
+          cursor: pointer;
+          z-index: 5;
+          transition: .3s;
+  
+          &:after {
+            content: '^';
+            //@include icon();
+            color:  var(--color-secondary);
+            position: absolute;
+            right: 1.25rem;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            height: 1em;
+            transition: .3s;
+          }
+  
+          &:hover {
+            background-color: $gray-lighter;
+            color:  var(--color-secondary);
+          }
+        }
+      }
+  
+      //Expandable content section
+      .zn-content {
+        border-top: 1px solid $gray-lighter;
+        margin: 0;
+        padding: 1.5rem 1.25rem;
+      }
+  
+      //Styles when content expanded
+      &.zn-expanded {
+        .zn-title {
+          .zn-title-button {
+            color:  var(--color-secondary);
+  
+            &:after {
+              transform: rotateX(180deg);
+            }
+          }
+        }
+  
+        .zn-content {
+          position: relative;
+        }
+      }
+    }
+  }
