@@ -19,29 +19,22 @@ class ImpactHeaderForm extends Fieldset {
       'options' => [
         'label' => 'Image', // @translate
       ],
-    ])
-      /*->add([
-        'name' => 'o:block[__blockIndex__][o:data][link]',
-        'type' => Url::class,
-        'options' => [
-          'label' => 'Link URL', // @translate
-        ],
-      ])*/
+      ])
       ->add([
         'name' => 'o:block[__blockIndex__][o:data][heading]',
         'type' => Text::class,
         'options' => [
-          'label' => 'Link Text', // @translate
+          'label' => 'Heading', // @translate
         ]
       ])
       ->add([
         'name' => 'o:block[__blockIndex__][o:data][heading_size]',
         'type' => Select::class,
         'options' => [
-            'label' => 'Heading Size',
+            'label' => 'Heading Size', // @translate
             'value_options' => [
-                'h1' => 'h1',
-                'h2' => 'h2',
+                'h1' => 'H1 - select when this is the first block',  // @translate
+                'h2' => 'H2 - select if this is not the first block', // @translate
             ],
         ],
       ])

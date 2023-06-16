@@ -5,39 +5,41 @@ namespace JohnsHopkinsBlockModule\Form;
 use Laminas\Form\Element\Textarea;
 use Laminas\Form\Element\Text;
 use Laminas\Form\Fieldset;
-use Omeka\Form\Element\Asset;
+use Laminas\Form\Element\Select;
 
 class FeaturedDisplayForm extends Fieldset {
 
   public function init()
   {
-    $this->add([
-        'name' => 'o:block[__blockIndex__][o:data][item]',
-        'type' => Asset::class,
+    $this
+      ->add([
+        'name' => 'o:block[__blockIndex__][o:data][heading]',
+        'type' => Text::class,
         'options' => [
-          'label' => 'Item', // @translate
+          'label' => 'Heading', // @translate
+          'description' => 'test',
         ],
       ])
       ->add([
-        'name' => 'o:block[__blockIndex__][o:data][quote]',
+        'name' => 'o:block[__blockIndex__][o:data][description]',
         'type' => Textarea::class,
         'options' => [
-          'label' => 'Quote', // @translate
+          'label' => 'Description', // @translate
+        ],
+        'attributes' => [
+          'class' => 'wysiwyg',
         ],
       ])
       ->add([
-        'name' => 'o:block[__blockIndex__][o:data][author]',
-        'type' => Text::class,
+        'name' => 'o:block[__blockIndex__][o:data][layout]',
+        'type' => Select::class,
         'options' => [
-          'label' => 'Author', // @translate
-        ]
-      ])
-      ->add([
-        'name' => 'o:block[__blockIndex__][o:data][subtext]',
-        'type' => Text::class,
-        'options' => [
-          'label' => 'Author Subtext', // @translate
-        ]
+            'label' => 'Media Placement',
+            'value_options' => [
+                'image-left' => 'Left',
+                'image-right' => 'Right',
+            ],
+        ],
       ])
     ;
   }

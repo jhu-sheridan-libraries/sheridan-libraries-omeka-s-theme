@@ -10,60 +10,60 @@ use Omeka\Api\Representation\SitePageRepresentation;
 use Omeka\Api\Representation\SiteRepresentation;
 use Omeka\Site\BlockLayout\AbstractBlockLayout;
 
-class FeaturedDisplay extends AbstractBlockLayout {
+class FeaturedDisplay extends AbstractBlockLayout
+{
 
-  /**
-   * @var FormElementManager
-   */
-  protected $formElementManager;
+    /**
+     * @var FormElementManager
+     */
+    protected $formElementManager;
 
-  /**
-   * @param FormElementManager $formElementManager
-   */
-  public function __construct(FormElementManager $formElementManager)
-  {
-    $this->formElementManager = $formElementManager;
-  }
-
-  /**
-   * @inheritDoc
-   */
-  public function getLabel() {
-    return 'Featured Display'; // @translate
-  }
-
-  /**
-   * @inheritDoc
-   */
-  public function form(PhpRenderer $view, SiteRepresentation $site, SitePageRepresentation $page = null, SitePageBlockRepresentation $block = null) {
-    $form = $this->formElementManager->get(FeaturedDisplayForm::class);
-
-    if ($block && $block->data()) {
-      $form->populateValues([
-        'o:block[__blockIndex__][o:data][quote]' => $block->dataValue('quote'),
-        'o:block[__blockIndex__][o:data][author]' => $block->dataValue('author'),
-        'o:block[__blockIndex__][o:data][subtext]' => $block->dataValue('subtext'),
-      ]);
+    /**
+     * @param FormElementManager $formElementManager
+     */
+    public function __construct(FormElementManager $formElementManager)
+    {
+      $this->formElementManager = $formElementManager;
     }
 
-    return $view->formCollection($form);
-  }
-
-  /**
-   * @inheritDoc
-   */
-  public function render(PhpRenderer $view, SitePageBlockRepresentation $block) {
-    $imageID = $block->dataValue('image');
-    $image = null;
-    if($imageID) {
-      $image = $view->api()->read('assets', ['id' => $imageID])->getContent();
+    public function getLabel()
+    {
+        return 'Featured Display'; // @translate
     }
+
+    public function form(PhpRenderer $view, SiteRepresentation $site,
+        SitePageRepresentation $page = null, SitePageBlockRepresentation $block = null
+    ) {
+        $html = '';
+
+        $form = $this->formElementManager->get(FeaturedDisplayForm::class);
+
+        if ($block && $block->data()) {
+          $form->populateValues([
+            'o:block[__blockIndex__][o:data][heading]' => $block->dataValue('heading'),
+            'o:block[__blockIndex__][o:data][description]' => $block->dataValue('description'),
+            'o:block[__blockIndex__][o:data][layout]' => $block->dataValue('layout'),
+          ]);
+        }
     
+        $html .= $view->formCollection($form);
+        $html .= $view->blockAttachmentsForm($block);
 
-    return $view->partial('common/block-layout/featured-display', [
-      'quote' => $block->dataValue('quote'),
-      'author' => $block->dataValue('author'),
-      'subtext' => $block->dataValue('subtext'),
-    ]);
-  }
+        return $html;
+    }
+
+    public function render(PhpRenderer $view, SitePageBlockRepresentation $block)
+    {
+        $attachments = $block->attachments();
+        
+        return $view->partial('common/block-layout/featured-display', [
+            'block' => $block,
+            'attachments' => $attachments,
+            'thumbnailType' => 'large',
+            'showTitleOption' => true,
+            'heading' => $block->dataValue('heading'),
+            'description' => $block->dataValue('description'),
+            'layout' => $block->dataValue('layout'),
+        ]);
+    }
 }

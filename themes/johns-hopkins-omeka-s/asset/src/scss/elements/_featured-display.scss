@@ -1,0 +1,13 @@
+.zn-featured-display {
+    background: $gray-lighter;
+    padding: 2rem;
+    margin: 2rem 0;
+
+    @media (min-width: $bp-l) {
+        display: flex;
+
+        &.image-right {
+            flex-direction: row-reverse;
+        }
+    }
+}
