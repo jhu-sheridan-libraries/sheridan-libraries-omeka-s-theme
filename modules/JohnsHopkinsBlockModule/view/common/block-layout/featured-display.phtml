@@ -1,4 +1,8 @@
 <div class="zn-featured-display <?php echo $layout; ?>">
+    <div class="zn-content">
+        <h2><?php echo $heading; ?></h2>
+        <div class="zn-description"><?php echo $description; ?></div>
+    </div>
     <?php if(isset($attachments[0])): ?>
         <div class="zn-content item resource">
             <?php
@@ -27,10 +31,6 @@
             <?php endif; ?>
         </div>
     <?php endif; ?>
-    <div class="zn-content">
-        <h2><?php echo $heading; ?></h2>
-        <div class="zn-descrition"><?php echo $description; ?></div>
-    </div>
 </div>
 
 

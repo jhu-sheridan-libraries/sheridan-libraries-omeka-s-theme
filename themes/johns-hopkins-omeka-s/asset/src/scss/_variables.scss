@@ -26,10 +26,13 @@ $f-heavy: 'alternate-gothic-extra-cond', sans-serif;
 $f-display-transform: none;
 
 $font-size-page-title: 2.5rem;
+$font-size-page-title-lg: 3.5rem;
 
 //Line Heights
 $lh-normal: 1.5;
 $lh-tight: 1.125;
+
+$lh-page-title: $lh-tight;
 
 //Colors
 $white: #fff;
@@ -227,6 +230,8 @@ $focus-default-color: $blue;
     --font-display-transform: #{$f-display-transform};
 
     --font-size-page-title: #{$font-size-page-title};
+    --font-size-page-title-lg: #{$font-size-page-title-lg};
+    --line-height-page-title: #{$lh-page-title};
 
     --gray-darker: #{$gray-darker}; 
     --gray-dark: #{$gray-dark}; 

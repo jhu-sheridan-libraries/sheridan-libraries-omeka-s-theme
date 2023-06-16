@@ -1,21 +1,76 @@
 .zn-quote {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    padding: 2rem;
-    border-top: 1px solid $gray-light;
-    border-bottom: 1px solid $gray-light;
-    text-align: center;
+    box-sizing: border-box;
+    max-width: $w-content;
+    margin: 2rem 0;
+    border-left: 4px solid var(--color-secondary);
+    padding-left: 1.5rem;
 
+    @media (min-width: $bp-m) {
+        padding-left: 2rem;
+    }
+   
     .quote-text {
-        font-size: 2.5rem;
+        font-size: 1.5rem;
         font-style: italic;
         color: var(--color-primary);
+        margin-bottom: 1rem;
+
+        &:before {
+            content: open-quote;
+        }
+
+        &:after {
+            content: close-quote;
+        }
+
+        @media (min-width: $bp-l) {
+            font-size: 2rem;
+        }
     }
+
     .quote-author {
-        font-weight: 600;
+        font-weight: 700;
+        line-height: $lh-tight;
         
         .quote-author-subtext {
-            font-weight: 400;
+            font-weight: 500;
+        }
+    }
+
+    @media (min-width: $bp-l) {
+        .quote-author {
+            font-size: 1.125rem;
+        }
+    }
+
+    &.full-width {
+        width: 100%;
+        max-width: none;
+        margin-bottom: 2rem;
+        padding: 2rem;
+        border-top: 1px solid $gray-light;
+        border-bottom: 1px solid $gray-light;
+        border-left: 0;
+        text-align: center;
+
+        .quote-text {
+            max-width: 768px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        
+
+    }
+
+    &.float {
+        @media (min-width: $bp-m) {
+            overflow: hidden;
+            width: 33%;
+            margin-top: 0;
+            margin-left: 1.5rem;
+            max-width: 650px;
+            float: right;
         }
     }
 }
