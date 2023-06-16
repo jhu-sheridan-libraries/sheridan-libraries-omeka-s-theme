@@ -6,12 +6,14 @@
  * @var String $subtext
  */
 
+$layout = $layout ?? 'normal';
+
 if($subtext){
     $subtext = '<div class="quote-author-subtext">' . $subtext . '</div>';
 }
 
 echo <<<HTML
-<div class="zn-quote">
+<div class="zn-quote $layout">
     <div class="quote-text">
         $quote
     </div>

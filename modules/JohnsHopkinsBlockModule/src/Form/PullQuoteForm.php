@@ -5,6 +5,7 @@ namespace JohnsHopkinsBlockModule\Form;
 use Laminas\Form\Element\Textarea;
 use Laminas\Form\Element\Text;
 use Laminas\Form\Fieldset;
+use Laminas\Form\Element\Select;
 
 class PullQuoteForm extends Fieldset {
 
@@ -30,6 +31,18 @@ class PullQuoteForm extends Fieldset {
         'options' => [
           'label' => 'Author Subtext', // @translate
         ]
+      ])
+      ->add([
+        'name' => 'o:block[__blockIndex__][o:data][layout]',
+        'type' => Select::class,
+        'options' => [
+            'label' => 'Placement',
+            'value_options' => [
+                'normal' => 'Normal',
+                'full-width' => 'Full Width',
+                'float' => 'Right Aligned',
+            ],
+        ],
       ])
     ;
   }

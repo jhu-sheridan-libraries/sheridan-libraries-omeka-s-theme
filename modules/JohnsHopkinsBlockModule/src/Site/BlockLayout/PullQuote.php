@@ -43,6 +43,7 @@ class PullQuote extends AbstractBlockLayout {
         'o:block[__blockIndex__][o:data][quote]' => $block->dataValue('quote'),
         'o:block[__blockIndex__][o:data][author]' => $block->dataValue('author'),
         'o:block[__blockIndex__][o:data][subtext]' => $block->dataValue('subtext'),
+        'o:block[__blockIndex__][o:data][layout]' => $block->dataValue('layout'),
       ]);
     }
 
@@ -64,6 +65,7 @@ class PullQuote extends AbstractBlockLayout {
       'quote' => $block->dataValue('quote'),
       'author' => $block->dataValue('author'),
       'subtext' => $block->dataValue('subtext'),
+      'layout' => $block->dataValue('layout'),
     ]);
   }
 }
