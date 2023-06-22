@@ -28,7 +28,7 @@ class FeaturedDisplay extends AbstractBlockLayout
 
     public function getLabel()
     {
-        return 'Featured Display'; // @translate
+        return 'JH Custom Block - Featured Display'; // @translate
     }
 
     public function form(PhpRenderer $view, SiteRepresentation $site,
@@ -55,7 +55,7 @@ class FeaturedDisplay extends AbstractBlockLayout
     public function render(PhpRenderer $view, SitePageBlockRepresentation $block)
     {
         $attachments = $block->attachments();
-        
+
         return $view->partial('common/block-layout/featured-display', [
             'block' => $block,
             'attachments' => $attachments,

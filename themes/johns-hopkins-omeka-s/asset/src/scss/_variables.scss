@@ -58,8 +58,8 @@ $focus-default-color: $blue;
 //--
 
 //Font Icon (Font Awesome)
-@mixin icon($size: 1em, $weight: 400) {
-    font-family: 'Font Awesome 5 Pro';
+@mixin icon($size: 1em, $weight: 700) {
+    font-family: 'Font Awesome 5 Free';
     font-weight: $weight;
     font-style: normal;
     font-size: $size;

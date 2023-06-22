@@ -126,6 +126,13 @@ $siteColors = [
                 </div>
             </div>
         </main>
+        <?php if ($this->themeSetting('show_exhibition_link') == 'show'): ?>
+            <div class="exhibitions-banner">
+                <div class="site-width">
+                    <a class="zn-arrow-link" href="https://www.library.jhu.edu/about/exhibitions/">View all Sheridan Libraries Exhibitions</a>
+                </div>
+            </div>
+        <?php endif; ?>
         <footer id="footer">
             <div class="site-width">
                 <div class="footer-stage">

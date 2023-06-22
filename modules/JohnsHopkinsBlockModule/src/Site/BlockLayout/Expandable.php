@@ -29,7 +29,7 @@ class Expandable extends AbstractBlockLayout {
    * @inheritDoc
    */
   public function getLabel() {
-    return 'Expandable'; // @translate
+    return 'JH Custom Block - Expandable'; // @translate
   }
 
   /**

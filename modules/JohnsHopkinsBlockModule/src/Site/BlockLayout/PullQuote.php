@@ -29,7 +29,7 @@ class PullQuote extends AbstractBlockLayout {
    * @inheritDoc
    */
   public function getLabel() {
-    return 'Pull Quote'; // @translate
+    return 'JH Custom Block - Pull Quote'; // @translate
   }
 
   /**

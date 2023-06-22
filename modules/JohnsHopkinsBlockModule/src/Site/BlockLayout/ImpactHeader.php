@@ -29,7 +29,7 @@ class ImpactHeader extends AbstractBlockLayout {
    * @inheritDoc
    */
   public function getLabel() {
-    return 'Impact Header'; // @translate
+    return 'JH Custom Block - Impact Header'; // @translate
   }
 
   /**
