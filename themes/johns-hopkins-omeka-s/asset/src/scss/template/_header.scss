@@ -33,35 +33,44 @@
                 height: 3rem;
                 width: 3rem;
                 margin-right: .5rem;
-                background-image: url('../images/university.shield.blue.png');
+                background-image: url('../images/university.shield.blue.svg');
                 background-repeat: no-repeat;
                 background-size: auto 100%;
                 background-position: center;
 
                 &.logo-hopkins_medicine {
-                    background-image: url('../images/medicine.shield.blue.png');
+                    background-image: url('../images/medicine.shield.blue.svg');
                 }
 
                 @media (min-width: $bp-l) {
                     width: 20rem;
                     height: 6rem;
                     margin-right: 0;
-                    background-image: url('../images/university.logo.horizontal.blue.png');
+                    background-image: url('../images/university.logo.horizontal.blue.svg');
                     
                     &.logo-hopkins_medicine {
-                        background-image: url('../images/medicine.logo.horizontal.blue.png');
+                        background-image: url('../images/medicine.logo.horizontal.blue.svg');
                     }
 
                     &.logo-libraries {
-                        background-image: url('../images/sheridan-libraries.logo.horizontal.blue.png');
+                        background-image: url('../images/sheridan-libraries.logo.horizontal.blue.svg');
                     }
 
                     &.logo-museums {
-                        background-image: url('../images/sheridan-museums.logo.horizontal.blue.png');
+                        background-image: url('../images/sheridan-museums.logo.horizontal.blue.svg');
                     }
 
                     &.logo-jhu {
-                        background-image: url('../images/university.logo.horizontal.blue.png');
+                        background-image: url('../images/university.logo.horizontal.blue.svg');
+                    }
+                }
+
+                &.logo-none {
+                    display: none;
+
+                    + .brand-text {
+                        border-left: 0 !important;
+                        padding-left: 0 !important;
                     }
                 }
             }
